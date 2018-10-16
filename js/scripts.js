@@ -4,6 +4,7 @@ function Ticket(name, age, film, showtime) {
   this.age = age;
   this.film = film;
   this.showtime = showtime;
+
 }
 var price = 10
 
@@ -31,15 +32,16 @@ $(document).ready(function() {
     var name = $("#name").val();
     var age = parseInt($("#age").val());
     var film = $("#film").val();
+    var filmTitle = $("#film option:selected").text();
     var showtime = $("#showtime").val();
 
-    console.log(film);
+    console.log(threeD);
     // debugger;
     var newTicket = new Ticket(name, age, film, showtime)
     var newPrice = priceCalc(newTicket);
     console.log(newTicket);
     // console.log(newPrice);
-    $("span#outputs").text("Hi " + name + ", your ticket price is $" + newPrice );
+    $("span#outputs").text("Hi " + name + ", your ticket price for " + filmTitle + " is $" + newPrice );
 
   });
 });
